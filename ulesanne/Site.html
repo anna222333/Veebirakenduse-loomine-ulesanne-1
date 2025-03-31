@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kebab Haven</title>
+    <link rel="icon" href="images/vecteezy_enjoying-a-fresh-shawarma-wrap-with-succulent-meat-and-crisp_54720253.png" type="image/x-icon"> <!-- Favicon for browser tab -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @font-face {
+            font-family: 'Poppins';
+            src: url('fonts/Poppins-Regular.ttf');
+        }
+
+       
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+            color: #444;
+            background-image: url('images/vecteezy_pale-cream-fog-or-smoke-color-isolated-background-for-effect_8133932.jpg'); /* Background image for the whole page */
+            background-size: cover;
+            background-position: center;
+        }
+
+      
+        header {
+           
+        position: relative;
+        color: rgb(255, 255, 255);
+        padding: 20px 10px;
+        text-align: start;
+        background-image: url(images/vecteezy_kebab-illustration-using-a-hand-drawing-style-continued-with_1280005211.jpg);
+        transition: transform 0.1s ease;
+        transition:opacity 0.3s ease;
+        z-index: 1000; 
+    }
+    header img {
+        max-width: 100px;
+        margin-bottom: 10px;
+        transition: opacity 0.3s ease; 
+    }
+
+        header h1 {
+            font-size: 60px;
+            margin: 0;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+       
+        nav {
+           
+            display: flex;
+            justify-content: center;
+            background-color:  rgb(244, 81, 31);
+            padding: 10px 0;
+            margin-top: 50px;
+            border-radius: 20px; 
+            box-shadow: 0 4px 10px  rgb(244, 81, 31); 
+        }
+
+        nav a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            margin: 10px 20px;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: rgb(173, 244, 31);
+        }
+
+   
+        .content {
+            padding: 50px 10%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 0px;
+            border-radius: 10px;
+            margin-bottom: 60px;
+        }
+
+      
+        .articles-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .article {
+            width: 30%; 
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .article:hover {
+            transform: scale(1.05);
+        }
+
+        .article img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #f4511e;
+        }
+
+        .article .text {
+            padding: 20px;
+        }
+
+        .article h2 {
+            font-size: 24px;
+            color: #f4511e;
+            margin-bottom: 10px;
+        }
+
+        .article p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .article a {
+            color: #f4511e;
+            text-decoration: none;
+        }
+
+        .article a:hover {
+            text-decoration: underline;
+        }
+
+    
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #f4511e;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+       
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 40px;
+            }
+
+            .articles-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .article {
+                width: 80%; 
+            }
+
+            nav {
+                flex-direction: column;
+                padding: 20px 0;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+        }
+    </style>
+   <script>
+    window.addEventListener('scroll', function () {
+        const header = document.querySelector('header');
+        const scrollY = window.scrollY;
+
+      
+        const opacity = Math.max(1 - scrollY / 180, 0); 
+        header.style.opacity = opacity;
+        header.style.transform = `translateY(${scrollY}px)`;
+
+        
+        if (opacity === 0) {
+            header.style.display = 'none';
+        } else {
+            header.style.display = 'block';
+        }
+    });
+</script>
+  
+</head>
+<body>
+
+<header>
+    
+    <h1><a href="#home" style="text-decoration: none; color: inherit;">Kebab Heaven</a></h1>
+    <p>Your Favorite Kebab Destination</p>
+</header>
+
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="content">
+    <div class="articles-container">
+        <div class="article">
+            <img src="images/pexels-cmrcn-29132437.jpg" alt="Kebab Grilling">
+            <div class="text">
+                <h2><a href="#kebab-magic">The Magic of Kebab: How We Grill with Love</a></h2>
+                <p>
+                    At Kebab Haven, every piece of meat becomes a masterpiece. We believe that kebab is not just food, but a true magic that unfolds when meat meets perfect spices and hits the hot coals. The secret lies in preserving the natural flavor and aroma while adding that special touch that will make you want to come back for more.
+                </p>
+                <p>
+                    From selecting the finest cuts of meat to grilling them to perfection, our process is one that ensures every kebab is bursting with flavor. In this article, we'll reveal how we prepare our kebabs and why they’re so unique.
+                </p>
+                <a href="#kebab-magic">Continue Reading...</a>
+            </div>
+        </div>
+
+        <div class="article">
+            <img src="images/pexels-nadin-sh-78971847-14286680.jpg" alt="Chef Preparing Kebab">
+            <div class="text">
+                <h2><a href="#perfect-kebab">The Perfect Kebab: Chef’s Secrets</a></h2>
+                <p>
+                    If you think making the perfect kebab is easy, you’re in for a surprise. It’s an art form that requires attention to detail, patience, and experience. Our chef shares his secrets: from choosing the right meat to grilling each piece just right over the fire.
+                </p>
+                <p>
+                    At Kebab Haven, we take pride in every kebab we make. Our chef explains the steps and techniques that elevate our kebabs from good to great. We’re confident that by following these simple tips, anyone can make a truly delicious kebab that will win over any foodie.
+                </p>
+                <a href="#perfect-kebab">Continue Reading...</a>
+            </div>
+        </div>
+
+        <div class="article">
+            <img src="images/pexels-quang-vuong-724225078-30979150.jpg" alt="Selection of Kebabs">
+            <div class="text">
+                <h2><a href="#choosing">How to Choose the Best Kebab? Expert Tips</a></h2>
+                <p>
+                    Choosing the perfect kebab is a science! There are countless varieties: from classic doner to more exotic options grilled on the barbecue. It’s essential to know which meat and spices to use, how to cook it properly, and which sides go best with each type.
+                </p>
+                <p>
+                    In this article, we’ll uncover the nuances of selecting the best kebab, share its many varieties, and help you find the one that will become your new favorite. Whether you're new to kebabs or a seasoned pro, these expert tips will make you an expert in choosing your ideal kebab every time.
+                </p>
+                <a href="#choosing">Continue Reading...</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Kebab Heaven | <a href="#Privacy Policy">Privacy Policy</a> | <a href="#Terms of Service">Terms of Service</a></p>
+</footer>
+
+</body>
+</html>
